@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blobbplopp</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.11.0/build/cssnormalize/cssnormalize-min.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/zohoforms.css">
+        <!-- ICONS NAV -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- delete this before go-live -->
+        <link rel="shortcut icon" href="#">
+
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/css/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/css/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/css/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/css/favicon/site.webmanifest">
+        
+        
+    </head>
+    <body>
+        <!-- NAVIGATION -->
+        <header>
+            
+            <img src="assets/css/img/logo-menu-shadow.svg" class="logo" alt="blobbplopp logo"></img>
+            <ul>
+                <li><a href="#home">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="nav_name">home</span>
+                </a></li>
+                <li><a href="about.html">
+                    <span class="nav_name">über blobbplopp</span>
+                </a></li>
+                <li><a href="#info">
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                    <span class="nav_name">kontakt</span>
+                </a></li>
+                <!-- B2B BETREFF BEARBEITEN -->
+                <li><a href="mailto:hello@serge.id?subject=Wir sind an einer Zusammenarbeit mit euch interessiert">
+                    <span class="nav_name">B2B</span>
+                </a></li>
+                <li><a href="#info">
+                    <ion-icon name="information-outline"></ion-icon>
+                    <span class="nav_name">Info</span>
+                </a></li>
+
+            </ul>
+        </header>
+
+        <!-- DROP -->
+        <div class="rain drop" data-tooltip="Die tatsächliche Form eines Regentropfens.
+                                            Eine relativ große Aufprallfläche erzeugt beim 
+                                            Auftreffen auf die Fensterbank ein lautes Geräusch.">
+        </div>
+            
+        <!-- DROP END -->
+        
+        <div class="container" >
+            <section class="one" id="home">
+                <div class="Info">
+                    <div class="Text">
+                        <h1>Der Regen schert sich einen Tropfen um den <mark class="paleorchid">Preis deiner Matratze.</mark></h1>
+                        <!-- <span></span> -->
+                        <p>
+                            Was macht es aus, wie viel Geld du in dein Schlafzimmer gesteckt hast, 
+                            wenn das Gedröhne des Regens auf der Fensterbank dich augenzuckend wach hält?  
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="two">
+                <div class="Info">
+                    <div class="Text">
+                        <h1>
+                            <mark class="paleorchid">Unter <b>30</b></mark> schläft man besser.</h1>
+                        <!-- <span></span> -->
+                        <p>Die Weltgesundheitsorganisation (WHO) empfiehlt einen Lärmpegel 
+                            von nicht mehr als <mark class="SemiBold">30 Dezibel (dB)</mark> während des Schlafs.
+                            <br>
+                            Beim Aufprall von Regentropfen auf eine Metallfensterbank 
+                            entsteht ein Geräuschpegel von bis zu <mark class="SemiBold">70 dB</mark>. Das entspricht etwa 
+                            der Lautstärke eines normalen Gesprächs.
+                            
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="three">
+                <div class="Info">
+                    <div class="Text">
+                        <h1>Nicht dein Musikgeschmack?</h1>
+                        <span></span>
+                        <p>Enjoy a quality sleep in silence</p>
+                    </div>
+                </div>
+            </section> -->
+            <section class="piano" >
+                <div class="Info">
+                    <div class="Text">
+                        <h1>
+                            Auf <mark class="paleorchid">das Nachtkonzert</mark> hätte man verzichten können...</h1>
+                        <!-- <span></span> -->
+                        <p> ...wenn man nur könnte.
+                            <br>
+                            Im Gegensatz zur gleichmäßig chaotischen Verteilung der Regentropfen 
+                            im Freien, fallen die Tropfen auf der Fensterbank in einem 
+                            <mark class="SemiBold">unregelmäßigen Muster,</mark> welches manche Menschen beim Schlafen stören 
+                            oder die Konzentration erschweren kann.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="xylo" >
+                <div class="Info">
+                    <div class="Text">
+                        <h1>Nicht dein Musikgeschmack?</h1>
+                        <!-- <span></span> -->
+                        <p>
+                            Unser Gehirn kann sich an rhythmische Geräusche anpassen und diese somit ignorieren. 
+                            Ist der <mark class="SemiBold">Tropf-Rhythmus</mark> jedoch <mark class="SemiBold">unvorhersehbar</mark>, kann das Gehirn keine stabilen 
+                            Muster erkennen und sich nicht anpassen. Dies beeinträchtigt die Konzentration und kann ein Gefühl von <mark class="SemiBold">Spannung und Unruhe</mark> auslösen.
+                        </p>
+                        <!-- erhöht die <mark class="SemiBold">Aufmerksamkeit</mark>, -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="mesh" >
+                <div class="Info">
+                    <div class="Text">
+                        <h1>
+                            <mark class="paleorchid">Regen </mark>abschalten können wir nicht. 
+                            <br>
+                            Auf <mark class="paleorchid">lautlos stellen</mark> schon.</h1>
+                        <!-- <span></span> -->
+                        <p>
+                            Kein Regen-Geklimper mehr auf der Fensterbank.
+                            <br>
+                            <big><mark class="midnight">blobbplopp</mark></big> besteht aus einem speziell entwickelten, 
+                            witterungsbeständigen Drahtgewebe. Durch dessen Struktur wird der Regentropfen 
+                            zerstäubt und das Aufprallgeräusch deutlich reduziert.
+                            <br> 
+                            Dank ihrer <mark class="SemiBold">innovativen Konstruktion</mark> lässt sich die maßgefertigte 
+                            <br>
+                            <mark class="SemiBold">Antidröhn-Lösung</mark> einfach und ohne Kleben oder Bohren installieren. 
+                             
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+                <!-- PRICING TABLE -->
+
+            <section class="three">
+                    <!-- BASIC -->
+                <div class="pricing">
+                    <div class="card-wrapper">
+                        <!-- card header -->
+                        <div class="card-header">
+                            <img src="assets/css/svg/window.svg">
+                            <h2>mein Schlafzimmer</h2>
+                        </div>
+                        <!-- card detail -->
+                        <div class="card-detail">
+                            <p><span class="fas fa-check check"></span> Meine Fensterbank auf <b>"nicht stören"</b> stellen</p>
+                            <p><span class="fas fa-check check"></span> <b>1-2</b> Fensterbänke</p>
+                            <!-- <p><span class="fas fa-check check"></span> keine Vorauszahlung</p> -->
+                        </div>
+                        <!-- card price -->
+                        <div class="card-price">
+                            <p><sup>blobbplopp</sup><sub>System</sub></p>
+                        </div>
+                        <!-- button -->
+                        
+                        <button id="zf_button_431446"  class="card-button" >besseren Schlaf vorbestellen</button>
+                        
+                    </div>
+
+                    <!-- Single-Family House -->
+                    <div class="card-wrapper">
+                        <!-- card header -->
+                        <div class="card-header">
+                            <img src="assets/css/svg/home-modern.svg">
+                            <h2>mein Haus</h2>
+                        </div>
+                        <!-- card detail -->
+                        <div class="card-detail">
+                            <p><span class="fas fa-check check"></span><b> 2+</b> Fensterbänke stummschalten</p>
+                            <p><span class="fas fa-check check"></span> <b>Schlafzimmer</b>  </p>
+                            <p><span class="fas fa-check check"></span> <b>Home-Office</b> </p>
+                            <p><span class="fas fa-check check"></span> <b>Work-Life-Sleep-Balance</b> </p>
+                            <!-- <p><span class="fas fa-check check"></span> keine Vorauszahlung</p> -->
+                            <!-- <p><span class="fas fa-check check"></span> Dröhn im <b>Home-Office</b> mindern</p> -->
+                            <!-- <p><span class="fas fa-check check"></span> lorem ipsum</p>
+                            <p><span class="fas fa-times nocheck"></span> lorem ipsum</p> -->
+                        </div>
+                        <!-- card price -->
+                        <div class="card-price">
+                            <p><sup>Rund-um-dröhnlos</sup><sub>Paket</sub></p>
+                        </div>
+                        <!-- button -->
+                        <button id="zf_button_386905" class="card-button">Ich will dröhnlos wohnen</button>
+                    </div>
+
+                    <!-- BUSINESS -->
+                    <div class="card-wrapper">
+                        <!-- card header -->
+                        <div class="card-header">
+                            <img src="assets/css/svg/buildings.svg">
+                            <h2>meine Gäste</h2>
+                        </div>
+                        <!-- card detail -->
+                        <div class="card-detail">
+                            <p><span class="fas fa-check check"></span> Die <b>Schlafqualität</b> unserer Gäste ist uns wichtig</p>
+                            <p><span class="fas fa-check check"></span> <b>Working space</b> Lösungen</p>
+                            <p><span class="fas fa-check check"></span> <b>Hotellerie, Office, Pflege  </b> </p>
+                            <!-- <p><span class="fas fa-check nocheck"></span> lorem ipsum</p>
+                            <p><span class="fas fa-check nocheck"></span> lorem ipsum</p> -->
+                        </div>
+                        <!-- card price -->
+                        <div class="card-price">
+                            <p><sup>B2B</sup><sub>Lösungen</sub></p>
+                        </div>
+                        <!-- button -->
+                        <button id="zf_button_515187" class="card-button">Let's talk!</button>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- COUNTER -->
+            <section class="two">
+                <div class="Info">
+                    <div class="Text">
+                        <h1>
+                            Für
+                            <span class="spin-up">
+                                <span>UNS</span>
+                                <span>DICH</span>
+                                <span>UNS</span>
+                                <span>DICH</span>
+                                <span>UNS</span>
+                            </span> 
+                            &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; zählt <mark class="paleorchid">jede Minute Deines Schlafs.</mark>
+                            
+                        </h1>
+                        <!-- <span></span> -->
+                        <p>
+                            Jede Fensterbank ist anders. Wir passen jeden blobbplopp individuell an, um eine maximale Effizienz zu erreichen. 
+                             
+                        </p>
+                    </div>
+                    <div class="counter">
+                        <ul >
+                            <li>
+                                <i class="fa-solid fa-microscope"></i>
+                                <p class="number">5+</p>
+                                <span></span>
+                                <p>Jahre Monitoring & Optimierung</p>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-cloud-moon-rain"></i>
+                                <p class="number">127</p>
+                                <span></span>
+                                <p>Regennächte/Jahr durchschnittlich in Deutschland</p>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-bed-pulse"></i>
+                                <p class="number">64</p>
+                                <span></span>
+                                <p>besserschlafende Nutzer</p>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-hand-holding-droplet"></i>
+                                <p class="number">93</p>
+                                <span></span>
+                                <p>dröhnlose Fensterbänke</p>
+                            </li>
+
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+            </section>
+        
+
+
+            <!-- FOOTER -->
+
+            <section class="bottom-field" id="info">
+                <footer class="footer">
+                    <div class="footer-left">
+                        <img src="assets/css/img/logo.png" alt="LOGO" >
+                        <div class="socials">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div> 
+                    
+                    <ul class="footer-right">
+                        
+                        <li>
+                            <h4>Für Dich</h4>
+                            <ul class="box">
+                                <li><a href="#">Hilfe & Kontakt</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">step-by-step <br> Anleitung</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h4 href="#">Jobs</h4>
+                            <ul class="box">
+                                <li><a href="#">Vollzeit</a></li>
+                                <li><a href="#">Praktikum</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="features">
+                            <h4>Info</h4>
+                            <ul class="box">
+                                <li><a href="#">Impressum</a></li>
+                                <li><a href="#">AGB</a></li>
+                                <li><a href="about.html">über blobbplopp</a></li>
+                                <li><a href="#">Datenschutz</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h4>B2B</h4>
+                            <ul class="box">
+                                <li><a href="mailto:hello@serge.id?subject=Wir sind an einer Zusammenarbeit mit euch interessiert">Kontakt</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h4>Kontakt</h4>
+                            <ul class="box">
+                                <a>blobbplopp UG</a>
+                                <a>Aachener Str. 127</a>
+                                <a>DE - 40223 Düsseldorf</a>
+                                <li><a href="#">hello@blobbplopp.de</a></li>
+                            </ul>
+                        </li>
+                    </ul>  
+                    
+                    <div class="footer-bottom">
+                        <p>All rights reserved by &copy;blobbplopp UG 2023</p>
+                    </div>
+                                    
+                </footer>
+            </section>    
+        </div>
+
+
+        <!-- scripts -->
+
+        <!-- <script src="./assets/js/main.js"></script>
+        <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
+
+        <!-- NAVIGATION -->
+        <script type="text/javascript">
+        const header = document.querySelector("header");
+        const container = document.querySelector(".container");
+
+        // Function to handle scroll event
+        function handleScroll(event) {
+          if (container.scrollTop > 0) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+
+        // Check window width on load and add/remove event listener accordingly
+        function checkWindowWidth() {
+          if (window.innerWidth < 429) {
+            container.removeEventListener("scroll", handleScroll); // Remove event listener
+          } else {
+            container.addEventListener("scroll", handleScroll); // Add event listener
+          }
+        }
+
+        // Call checkWindowWidth on page load and resize
+        window.addEventListener("load", checkWindowWidth);
+        window.addEventListener("resize", checkWindowWidth);
+
+        </script>
+        <!-- Counter -->
+        <!-- <script>
+            jQuery(document).ready(function($){
+                $(".number").counterUp({
+                    delay: 1
+                    // time: 50000/10,
+                });
+            });
+        </script> -->
+        <!-- AOS scroll -->
+        <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+        <script>
+            
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+            once: true
+            });
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!-- ZOHO -->
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
+</html>
