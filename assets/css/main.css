@@ -30,6 +30,7 @@
 
 section {
     font-family: 'Poppins', sans-serif;
+    height: 100vh; /*old browsers*/
     height: 100dvh;
     display:flex;
     flex-direction: row;
@@ -40,9 +41,18 @@ section {
     max-width: 1440px;   
 }
 
+/* Avoid Chrome to see Safari hack */
+@supports (-webkit-touch-callout: none) {
+  section {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
+}
+
 .container{
   scroll-snap-type: y mandatory;
   overflow: scroll;
+  height: 100vh; /*old browsers*/
   height: 100dvh;     
 }
 
@@ -60,6 +70,7 @@ section_about {
 .container_about{
 
 overflow: scroll;
+height: 100vh; /*old browsers*/
 height: 100dvh;     
 }
 
