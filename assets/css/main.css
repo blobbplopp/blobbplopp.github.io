@@ -29,7 +29,7 @@
 
 section {
     font-family: 'Poppins', sans-serif;
-    height: 100vh; /*old browsers*/
+    height: 95vh; /*old browsers*/
     height: 95svh;
     display:flex;
     flex-direction: row;
