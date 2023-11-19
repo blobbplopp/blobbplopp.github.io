@@ -30,7 +30,7 @@
 
 section {
     font-family: 'Poppins', sans-serif;
-    height: 100vh;
+    height: 100dvh;
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -43,7 +43,7 @@ section {
 .container{
   scroll-snap-type: y mandatory;
   overflow: scroll;
-  height: 100vh;     
+  height: 100dvh;     
 }
 
 section_about {
@@ -60,7 +60,7 @@ section_about {
 .container_about{
 
 overflow: scroll;
-height: 100vh;     
+height: 100dvh;     
 }
 
 /* NAVIGATION */
@@ -364,7 +364,7 @@ mark.SemiBold{
   transform-origin: left bottom;
 
 }
-.drop:hover::after {
+.drop:hover::after, .drop:active::after {
   --scale: 1;
   
 }
@@ -859,10 +859,26 @@ mark.SemiBold{
     }
   } */
 
+  @media(hover: hover) and (pointer: fine) { 
+  .drop:hover{
+    --scale: 1;
+  }
+    
+  }
+
   @media  (max-width:1200px) {
     header {
       padding-top: 30px;
       /* margin-right: 50px; */
+      
+    }
+
+  }
+
+  @media  (max-width:1024px) {
+    header {
+      padding-top: 20px;
+      
       
     }
 
@@ -1023,8 +1039,8 @@ mark.SemiBold{
   }
 
   .counter ul li p {
-    font-size: .8rem;
-    padding: 10px 5px;
+    font-size: .7rem;
+    padding: 10px 25px;
   }
   .counter ul li {
     margin: 10px 5px 0;
@@ -1086,14 +1102,14 @@ mark.SemiBold{
     header img.logo {
       margin: 0;
     }
-    enu, ol, ul {
-      padding: 3px 0 0 0px;
+    Menu, ol, ul {
+      padding: 0px 0 0 0px;
       margin: 0;
     }
-    header.sticky {
+    /* header.sticky {
       padding: 5px 5%;
       font-size: .8em;
-    }
+    } */
   .one {
     background-position: left top, left top, 0% 100.1%;
   }
@@ -1169,8 +1185,8 @@ ul .box {
     padding-bottom: 1em;
   }
 .footer-bottom{
-    padding-top: 1em;
-    /* margin-bottom: 1em; */
+    padding-top: 7em;
+    margin-bottom: 1em;
 }
 .footer-bottom p{
     font-size: 0.5em;
@@ -1218,12 +1234,25 @@ ul li:hover ul.box{
 
 .counter ul li {
 
-  padding: 0px 0px 10px;
-  margin: 0px 20px;
+  padding: 0px 0px 5px;
+  /* margin: 0px 20px;  */ 
+  margin: 0px -18px;
 }
+
 .spin-up span {
   padding-left: 5px;
 }
+}
+
+@media (width: 540px) {
+  ol, ul {
+    padding: 2px 0 0 0px;
+    margin: 0;
+  }
+
+  header.sticky {
+    padding: 5px 10px;
+  }
 }
 
 @media (width: 512px) {
@@ -1242,18 +1271,24 @@ ul li:hover ul.box{
   }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 431px) {
+  
+  .Text{
+    margin-right: 10%;
+  }
+
   header {
     position: fixed;
-    bottom: 0;
+    /* bottom: 0; */
     top: auto;
-    left: 0;
+    left: 85%;
+    width: 10%;
     /* border-radius: 48% 20% 57% 9% / 55% 43% 57% 41% ;
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05), 
                 10px 15px 15px rgba(0, 0, 0, 0.05), 
                 inset -5px -2px 8px rgba(255,255,255,0.9); */
     /* width: 90%; */
-    height: 5em;
+    /* height: 5em; */
     padding: 0 2em;
     margin: 0 0;
     display: grid;
@@ -1262,15 +1297,16 @@ ul li:hover ul.box{
     transform: none;
     justify-content: center;
     /* backdrop-filter: blur(5px); */
+    transform: skewY(-4deg);
   }
 
   header .logo {
     display: none;
   }
   /* place for bottom Navigation  */
-  section {
+  /* section {
     height: calc(100vh - 5em) ;
-  }
+  } */
   .bottom-field {
     background-position: 0% 86%;
     background-image: url('/assets/css/svg/bottom.svg'), linear-gradient(357deg,
@@ -1280,17 +1316,21 @@ ul li:hover ul.box{
       rgba(49,41,100,1) 92%);  
   }
   .drop {
-    margin-top: 82vh;
+    margin-top: 40vh;
   }
   header ul {
     display: flex;
     justify-content: space-around;
-    column-gap: 15%;
+    column-gap: 5%;
+    flex-direction: column;
+    padding-top: 50px;
     
     
   }
   header li {
     margin: 0 auto;
+    line-height: 15px;
+    
 
   }
   header ul li a {
@@ -1310,7 +1350,9 @@ ul li:hover ul.box{
   display: none;
 }
 .footer {
-  padding-bottom: 6em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  justify-content: center;
 }
 .footer-left {
   margin-left: 92px;
@@ -1318,22 +1360,23 @@ ul li:hover ul.box{
 
 }
 
-@media (max-width: 414px) {
+@media (max-width: 430px) {
   .counter ul li i {
     font-size: 1.5rem;
   }
   .drop::after {
-    max-width: 80vw;
+    max-width: 75vw;
   }
 .footer-left {
-    margin: 0 0 1% 20%;
+    margin: 0 0 1% 3vw;
     flex: 0 0;
 }
 .Text {
-  padding-top: 160px;
+  padding-top: 45vh;
 }
 .Info {
-  margin-right: 8vw;
+  margin-right: 1vw;
+  margin-left: 7vw;
 }
 .drop::after {
   background: rgb(255 255 255);
@@ -1403,6 +1446,10 @@ ul li:hover ul.box{
 }
 .card-wrapper:nth-child(3):hover  {
   transform: none;
+}
+
+.footer-bottom p {
+  color: #cd82f0;
 }
 
 }
