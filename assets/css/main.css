@@ -1289,6 +1289,14 @@ ul li:hover ul.box{
 
 @media (max-width: 431px) {
 
+    
+  @supports (-webkit-touch-callout: none) {
+    section {
+      height: 90vh;
+      height: 90svh;
+    } 
+ }
+
   section {
     height: 95vh;
     height: 95svh;
