@@ -383,6 +383,16 @@
         <!-- <script src="./assets/js/main.js"></script>
         <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
 
+                <!-- MOBILE HEIGHT -->
+        <script>
+            const documentHeight = () => {
+            const doc = document.documentElement
+            doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('resize', documentHeight)
+            documentHeight()
+        </script>
+
         <!-- NAVIGATION -->
         <script type="text/javascript">
         const header = document.querySelector("header");
