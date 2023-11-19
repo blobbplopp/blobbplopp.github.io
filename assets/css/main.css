@@ -1301,6 +1301,10 @@ ul li:hover ul.box{
     height: 95vh;
     height: 95svh;
   }
+
+  .spin-up{
+  height: 35px;
+  }
   
   .Text{
     margin-right: 10%;
