@@ -16,12 +16,11 @@
 }
 
 
-
-/* :root {
-    overflow: hidden;
-    height: 100%;
+:root {
+  --doc-height: 100%;
   }
-  
+
+  /*
   body { 
     position: relative;
     overflow-y: scroll;
@@ -34,7 +33,7 @@
 section {
     font-family: 'Poppins', sans-serif;
     height: 100vh; /*old browsers*/
-    height: 100svh;
+    height: var(--doc-height);
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -51,7 +50,7 @@ section {
   scroll-snap-type: y mandatory;
   overflow: scroll;
   height: 100vh; /*old browsers*/
-  height: 100svh;     
+  height: 100dvh;     
 }
 
 
