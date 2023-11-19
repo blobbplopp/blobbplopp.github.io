@@ -29,8 +29,8 @@
 
 section {
     font-family: 'Poppins', sans-serif;
-    height: 95vh; /*old browsers*/
-    height: 95svh;
+    height: 100vh; /*old browsers*/
+    height: 100svh;
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -46,6 +46,7 @@ section {
 .container{
   scroll-snap-type: y mandatory;
   overflow: scroll;
+  height: 100vh;
   height: 100svh;
   
       
