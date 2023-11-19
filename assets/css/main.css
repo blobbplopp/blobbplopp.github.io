@@ -16,32 +16,29 @@
 }
 
 
-:root {
-  --doc-height: 100%;
-  }
 
-  /*
-  body { 
-    position: relative;
-    overflow-y: scroll;
-    height: 100%;
+/* :root {
+  --doc-height: 100%;
   } */
-/*html {
+  
+
+
+ /* html {
   height: -webkit-fill-available;
-}*/
+} */
 
 section {
     font-family: 'Poppins', sans-serif;
     height: 100vh; /*old browsers*/
-    height: var(--doc-height);
+    height: 95svh;
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items:center;
     color: rgba(49,41,100,1);
     scroll-snap-align: start;
-    max-width: 1440px;   
-    /*height: -webkit-fill-available;*/
+    max-width: 1440px;
+    /* height: -webkit-fill-available;    */
 }
 
 
@@ -49,11 +46,19 @@ section {
 .container{
   scroll-snap-type: y mandatory;
   overflow: scroll;
-  height: 100vh; /*old browsers*/
-  height: 100dvh;     
+  height: 100svh;
+  
+      
 }
 
 
+/* Avoid Chrome to see Safari hack */
+/* @supports (-webkit-touch-callout: none) { */
+  /* .container { */
+    /* The hack for Safari */
+    /* height: -webkit-fill-available; */
+  /* } */
+/* } */
 
 section_about {
   height:min-content;
@@ -69,8 +74,8 @@ section_about {
 .container_about{
 
 overflow: scroll;
-height: 100vh; /*old browsers*/
-height: 100svh;     
+height: 100vh;
+height: 100dvh;     
 }
 
 /* NAVIGATION */
@@ -1326,7 +1331,7 @@ ul li:hover ul.box{
       rgba(49,41,100,1) 92%);  
   }
   .drop {
-    margin-top: 40vh;
+    margin-top: 28vh;
   }
   header ul {
     display: flex;
@@ -1382,7 +1387,7 @@ ul li:hover ul.box{
     flex: 0 0;
 }
 .Text {
-  padding-top: 45vh;
+  padding-top: 30vh;
 }
 .Info {
   margin-right: 1vw;
