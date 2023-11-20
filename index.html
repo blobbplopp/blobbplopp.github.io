@@ -387,7 +387,7 @@
         <!-- <script src="./assets/js/main.js"></script>
         <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
 
-                <!-- MOBILE HEIGHT -->
+        <!-- MOBILE HEIGHT OPTION 1-->
         <!-- <script>
             const documentHeight = () => {
             const doc = document.documentElement
@@ -396,6 +396,39 @@
             window.addEventListener('resize', documentHeight)
             documentHeight()
         </script> -->
+
+         <!-- MOBILE HEIGHT OPTION 2-->
+         <script>
+            function adjustHeight() {
+              var section = document.querySelector('section');
+              var container = section.querySelector('.container');
+
+              // Calculate the adjusted height considering browser UI elements
+              var adjustedHeight = window.innerHeight;
+
+              section.style.minHeight = adjustedHeight + 'px';
+              container.style.minHeight = adjustedHeight + 'px';
+            }
+
+            // Initial adjustment when the page loads
+            adjustHeight();
+
+            // Re-adjust if the window is resized
+            window.addEventListener('resize', function() {
+              // Run the adjustment function only if the screen width is 431 pixels or less
+              if (window.matchMedia('(max-width: 431px)').matches) {
+                adjustHeight();
+              }
+            });
+
+            // Adjust height dynamically when the user scrolls
+            window.addEventListener('scroll', function() {
+              // Run the adjustment function only if the screen width is 431 pixels or less
+              if (window.matchMedia('(max-width: 431px)').matches) {
+                adjustHeight();
+              }
+            });
+         </script>
 
         <!-- NAVIGATION -->
         <script type="text/javascript">
