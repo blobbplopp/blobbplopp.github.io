@@ -30,7 +30,7 @@
 section {
     font-family: 'Poppins', sans-serif;
     height: 100vh; /*old browsers*/
-    height: 100dvh;
+    min-height: 100dvh;
     height: -webkit-fill-available;
     display:flex;
     flex-direction: row;
@@ -45,7 +45,7 @@ section {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-  height: 100dvh;   
+  min-height: 100dvh;   
 }
 
 
@@ -1284,9 +1284,9 @@ ul li:hover ul.box{
 }
 
 @media (max-width: 431px) {
-
+/* 
   section {
-  height: 90vh; /*old browsers*/
+  height: 90vh;
   height: 100dvh;
   height: -webkit-fill-available;   
 }
@@ -1294,7 +1294,7 @@ ul li:hover ul.box{
 .container{
   height: 90vh;
   height: 100dvh;   
-}
+} */
 
   .spin-up{
     height: 35px;
