@@ -29,29 +29,23 @@
 
 section {
     font-family: 'Poppins', sans-serif;
-    height: -webkit-fill-available;
     height: 100vh; /*old browsers*/
     height: 100svh;
+    height: -webkit-fill-available;
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items:center;
     color: rgba(49,41,100,1);
     scroll-snap-align: start;
-    max-width: 1440px;
-    /* height: -webkit-fill-available;    */
+    max-width: 1440px;   
 }
-
-
 
 .container{
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: -webkit-fill-available;
   height: 100vh;
-  height: 100svh;
-  
-      
+  height: 100svh;   
 }
 
 
@@ -1291,21 +1285,19 @@ ul li:hover ul.box{
 
 @media (max-width: 431px) {
 
-    
-  @supports (-webkit-touch-callout: none) {
-    section {
-      height: 90vh;
-      height: 90svh;
-    } 
- }
-
   section {
-    height: 85vh;
-    height: 85svh;
-  }
+  height: 90vh; /*old browsers*/
+  height: 100svh;
+  height: -webkit-fill-available;   
+}
+
+.container{
+  height: 90vh;
+  height: 100svh;   
+}
 
   .spin-up{
-  height: 35px;
+    height: 35px;
   }
   
   .Text{
