@@ -46,7 +46,6 @@ section {
   overflow-y: scroll;
   height: 100vh;
   min-height: 100dvh;
-  height: -webkit-fill-available;
 }
 
 
@@ -1296,7 +1295,9 @@ ul li:hover ul.box{
   height: 90vh;
   height: 100dvh;   
 } */
-
+  .container  {
+    height: -webkit-fill-available; 
+  }
   .spin-up{
     height: 30px;
   }
