@@ -31,7 +31,7 @@ section {
     font-family: 'Poppins', sans-serif;
     height: 100vh; /*old browsers*/
     min-height: 100dvh;
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -45,7 +45,8 @@ section {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-  min-height: 100dvh;   
+  min-height: 100dvh;
+  height: -webkit-fill-available;
 }
 
 
@@ -1393,6 +1394,10 @@ ul li:hover ul.box{
   }
   .drop::after {
     max-width: 75vw;
+  }
+  .drop::before,
+  .drop::after{
+    touch-action: manipulation;
   }
 .footer-left {
     margin: 0 0 1% 3vw;
