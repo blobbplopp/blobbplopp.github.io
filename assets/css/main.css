@@ -1084,10 +1084,12 @@ mark.SemiBold{
     }
     .footer-left{
         flex: 1 0px;
+        z-index: 1;
         
     }
     .footer-right{
         flex: 2 0px;
+        z-index: 2;
     }
   }
 
