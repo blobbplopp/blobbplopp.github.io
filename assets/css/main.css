@@ -31,13 +31,15 @@ section {
     font-family: 'Poppins', sans-serif;
     height: 100vh; /*old browsers*/
     min-height: 100dvh;
-    min-height: -webkit-fill-available;
+    /* min-height: -webkit-fill-available; */
+    
     display:flex;
     flex-direction: row;
     /* justify-content: center; */
     align-items:center;
     color: rgba(49,41,100,1);
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     max-width: 1440px;   
 }
 
@@ -46,6 +48,7 @@ section {
   overflow-y: scroll;
   height: 100vh;
   min-height: 100dvh;
+    
 }
 
 
@@ -76,6 +79,9 @@ height: 100dvh;
 }
 
 /* NAVIGATION */
+
+
+
 header {
   font-family: 'MuseoModerno', cursive ;
   position: fixed;
@@ -377,6 +383,10 @@ mark.SemiBold{
 
 }
 .drop:hover::after, .drop:active::after {
+  --scale: 1;
+  
+}
+.drop:hover, .drop:active{
   --scale: 1;
   
 }
@@ -871,12 +881,7 @@ mark.SemiBold{
     }
   } */
 
-  @media(hover: hover) and (pointer: fine) { 
-  .drop:hover{
-    --scale: 1;
-  }
-    
-  }
+
 
   @media  (max-width:1200px) {
     header {
@@ -1185,7 +1190,7 @@ ul .box {
     margin: -121px 0 -9px 151px;
 
 }
-.footer-right ul li a:hover {
+.footer-right ul li a:hover  {
   padding-left: 0;
 }
 .footer-right h4 {
@@ -1298,8 +1303,9 @@ ul li:hover ul.box{
   height: 100dvh;   
 } */
   .container  {
-    height: -webkit-fill-available; 
+    height: calc(var(--vh, 1vh) * 100);
   }
+
   .spin-up{
     height: 30px;
   }
@@ -1399,7 +1405,7 @@ ul li:hover ul.box{
     max-width: 75vw;
   }
   .drop::before,
-  .drop::after{
+  .drop::after {
     touch-action: manipulation;
   }
 .footer-left {
