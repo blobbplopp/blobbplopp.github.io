@@ -404,14 +404,16 @@
          <!-- MOBILE HEIGHT OPTION 2-->
          <script>
             function adjustHeight() {
-              var section = document.querySelector('section');
-              var container = section.querySelector('.container');
+                var section = document.querySelector('section');
+                var container = section ? section.querySelector('.container') : null;
 
-              // Calculate the adjusted height considering browser UI elements
-              var adjustedHeight = window.innerHeight;
+                if (section && container) {
+                // Calculate the adjusted height considering browser UI elements
+                var adjustedHeight = window.innerHeight;
 
-              section.style.minHeight = adjustedHeight + 'px';
-              container.style.minHeight = adjustedHeight + 'px';
+                section.style.minHeight = adjustedHeight + 'px';
+                container.style.minHeight = adjustedHeight + 'px';
+                }
             }
 
             // Initial adjustment when the page loads
@@ -419,18 +421,18 @@
 
             // Re-adjust if the window is resized
             window.addEventListener('resize', function() {
-              // Run the adjustment function only if the screen width is 431 pixels or less
-              if (window.matchMedia('(max-width: 431px)').matches) {
-                adjustHeight();
-              }
+                // Run the adjustment function only if the screen width is 431 pixels or less
+                if (window.matchMedia('(max-width: 431px)').matches) {
+                    adjustHeight();
+                }
             });
 
             // Adjust height dynamically when the user scrolls
             window.addEventListener('scroll', function() {
-              // Run the adjustment function only if the screen width is 431 pixels or less
-              if (window.matchMedia('(max-width: 431px)').matches) {
-                adjustHeight();
-              }
+                // Run the adjustment function only if the screen width is 431 pixels or less
+                if (window.matchMedia('(max-width: 431px)').matches) {
+                    adjustHeight();
+                }
             });
          </script>
 
