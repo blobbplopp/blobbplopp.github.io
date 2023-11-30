@@ -30,7 +30,7 @@
 section {
     font-family: 'Poppins', sans-serif;
     height: 100vh; /*old browsers*/
-    /* min-height: 100dvh;*/
+    min-height: 100dvh;
     /* min-height: -webkit-fill-available; */
     
     display:flex;
@@ -47,7 +47,7 @@ section {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-  /* min-height: 100dvh; */
+  min-height: 100dvh;
     
 }
 
@@ -875,6 +875,8 @@ mark.SemiBold{
     background-color: rgba(205, 130, 240, 1);
   }
 
+
+
   /* @media  (min-width:1440px) {
     .drop {
       margin-left: calc(50% - 650px);
@@ -1170,14 +1172,16 @@ ul li h4{
 }
 
 .footer-right ul li h4{
-    transition: all 3s ease;
-    
-    
-    
+    transition: all 3s ease;   
 }
+
+.footer-right a{
+  width: fit-content;
+}
+
+
 .footer-right h4 {
-  font-size: .8rem;
-  
+  font-size: .8rem; 
 }
 ul .box {
   text-align: center;
@@ -1212,7 +1216,6 @@ ul .box {
 }
 .socials a{
     transform: rotate(45deg);
-    
 }
 
 ul li ul.box li{
@@ -1224,9 +1227,16 @@ ul li ul.box{
     background: none;
     position: relative;
     z-index: 999;
-    display: none;
-    
+    display: none;    
 }
+
+/* #footer-bar:checked ~ .box {
+  display: initial;
+} */
+/* #footer-bar:not(:checked) ~ .box {
+  display: none;
+} */
+
 ul li h4:hover{
     background: none;
     
@@ -1302,7 +1312,7 @@ ul li:hover ul.box{
   height: 90vh;
   height: 100dvh;   
 } */
-  section  {
+  .container  {
     height: calc(var(--vh, 1vh) * 100);
   }
 
@@ -1344,6 +1354,54 @@ ul li:hover ul.box{
   /* section {
     height: calc(100vh - 5em) ;
   } */
+
+  .one {
+    background-position: left top, left top, 0% 96%;
+    background-image: url('/assets/css/svg/menu.svg'), url('/assets/css/svg/sub.svg'),url('/assets/css/svg/bottom.svg'), linear-gradient(357deg, 
+    #312964 7%, 
+    #cd82f0 3%, 
+    #569aac 21%, 
+    #312964 97%);
+  }
+  
+  .two, .three, .five, .bottom-field {
+    background-position: 0% 96%;
+    background-image: url('/assets/css/svg/bottom.svg'), linear-gradient(357deg,
+    rgba(49,41,100,1) 7%, 
+      rgba(205,130,240,1) 3%, 
+      rgba(86,154,172,1) 21%, 
+      rgba(49,41,100,1) 97%); 
+  }
+
+  .piano {
+    background-position: 0% 96%, 50% 94%;
+    background-image: url('/assets/css/svg/bottom.svg'), url('/assets/css/svg/keys.svg'), linear-gradient(357deg, 
+    rgba(49,41,100,1) 7%,
+    rgba(205,130,240,1) 3%, 
+    rgba(86,154,172,1) 21%, 
+    rgba(49,41,100,1) 92%);
+  }
+
+  .xylo {
+    background-position: 0% 96%, 50% 94%;
+    background-image: url('/assets/css/svg/bottom.svg'), url('/assets/css/svg/xylo.svg'), linear-gradient(357deg, 
+    rgba(49,41,100,1) 7%,
+    rgba(205,130,240,1) 3%, 
+    rgba(86,154,172,1) 21%, 
+    rgba(49,41,100,1) 92%);
+  }
+
+  .mesh{
+    background-position:  0.5% 94%, 70% 96%;
+    background-image: url('/assets/css/svg/mesh.svg'), 
+    url('/assets/css/svg/bottom.svg'), linear-gradient(357deg, 
+    rgba(49,41,100,1) 7%,
+      rgba(205,130,240,1) 3%, 
+      rgba(86,154,172,1) 21%, 
+      rgba(49,41,100,1) 92%);
+
+  }
+
   .bottom-field {
     background-position: 0% 86%;
     background-image: url('/assets/css/svg/bottom.svg'), linear-gradient(357deg,
@@ -1422,9 +1480,7 @@ ul li:hover ul.box{
 .drop::after {
   background: rgb(255 255 255);
 }
-.mesh{
-  background-position:  0.5% 98%, 70% 100%;
-}
+
 /* PRICING TABLE */
 
 .pricing{
