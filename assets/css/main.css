@@ -196,14 +196,41 @@ header ul li a {
     box-sizing:content-box;   
 }
 
+.Text_legal {
+  width:85%;
+  padding: 50px 0px 0;    
+  text-align:left; 
+  box-sizing:content-box;   
+  
+}
+
+.card_legal{
+  max-width: 1120px;
+  background-color: white;
+  border-radius: 50px;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  padding: 20px 50px 100px;
+  box-shadow: 0 0 64px rgba(49,41,100,.8);
+  
+}
+
 .Text h1{
     font-family: 'Poppins', sans-serif; 
     margin-bottom: 0;
     font-size: 3em;
     font-weight: 200;  
-    color: rgba(49,41,100,1);
-    
-    
+    color: rgba(49,41,100,1);  
+}
+
+.Text_legal h1 {
+  font-family: 'Poppins', sans-serif; 
+  margin-bottom: 0;
+  font-size: 3em;
+  font-weight: 200;  
+  color: rgba(49,41,100,1);  
 }
 
 .Text h2{
@@ -215,8 +242,23 @@ header ul li a {
   text-transform: uppercase;
 }
 
+.Text_legal h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: rgba(49,41,100,1);
+  text-transform: uppercase;
+}
+
 .Text p{
     font-family: 'Poppins', sans-serif;  
+    font-size: 1.4em;
+    font-weight: 300;
+    color: rgba(49,41,100,1);
+}
+
+.Text_legal p{
+  font-family: 'Poppins', sans-serif;  
     font-size: 1.4em;
     font-weight: 300;
     color: rgba(49,41,100,1);
@@ -948,6 +990,7 @@ mark.SemiBold{
   }
   .footer li {
     width: auto;
+    padding-right: 10px;
   }
   .footer-left img {
     width: 220px;
@@ -973,14 +1016,25 @@ mark.SemiBold{
   .footer-left img {
     padding-bottom: 1em;
   }
-  .Text h2{
+  .Text h2 {
     font-size: 1.2rem;
   }
-  .Text h1{
+  .Text h1 {
+    font-size: 2.5rem;
+  }
+  .Text p {
+    font-size: 1rem;
+  }
+
+  .Text_legal h2 {
+    font-size: 1.2rem;
+  }
+
+  .Text_legal h1 {
     font-size: 2.5rem;
   }
 
-  .Text p{
+  .Text_legal p {
     font-size: 1rem;
   }
 
@@ -1052,6 +1106,9 @@ mark.SemiBold{
   }
   .Text h1 {
     font-size: 2em;  
+  }
+  .Text_legal h1 {
+    font-size: 2em;
   }
   .counter ul {
     padding-left: 10px;
@@ -1151,7 +1208,7 @@ mark.SemiBold{
     padding: 1rem 1rem 2rem 1rem;    
 }
 .footer li {
-  width: 18em;
+  width: 8em;
 }
 ul {
     list-style: none;
@@ -1164,11 +1221,11 @@ ul li {
 ul li h4{
     display: block;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     
 }
 .footer h4::before {
-  left: 40%;
+  left: 30%;
 }
 
 .footer-right ul li h4{
@@ -1227,7 +1284,7 @@ ul li ul.box{
     background: none;
     position: relative;
     z-index: 999;
-    display: none;    
+    /* display: none;     */
 }
 
 /* #footer-bar:checked ~ .box {
@@ -1251,6 +1308,10 @@ ul li:hover ul.box{
 }
 .Text h1 {
   font-size: 1.5em;  
+}
+
+.Text_legal h1 {
+  font-size: 1.5em;
 }
 
 .spin-up{
@@ -1324,6 +1385,10 @@ ul li:hover ul.box{
     margin-right: 10%;
   }
 
+  .Text_legal{
+    margin-right: 10%;
+  }
+
   header {
     position: fixed;
     /* bottom: 0; */
@@ -1359,6 +1424,7 @@ ul li:hover ul.box{
     background-position: left top, left top, 2% 96%;
     background-image: url('/assets/css/svg/menu.svg'), url('/assets/css/svg/sub.svg'),url('/assets/css/svg/bottom.svg'), linear-gradient(357deg, 
     #312964 8%, 
+    /* online version change 7% to 8% */
     #cd82f0 3%, 
     #569aac 21%, 
     #312964 97%);
@@ -1449,8 +1515,27 @@ ul li:hover ul.box{
   margin-bottom: 0;
   justify-content: center;
 }
+
+.footer li{
+  padding-right: 0px;
+  width: 11em;
+  margin-left: 0;
+}
+.footer h4::before {
+  left: 0%;
+}
+
 .footer-left {
   margin-left: 92px;
+}
+.footer-right ul li a {
+  display: inline;
+}
+.footer ul .box {
+  text-align: left;
+}
+.footer h4::before {
+  bottom: -5px;
 }
 
 }
@@ -1470,7 +1555,7 @@ ul li:hover ul.box{
     margin: 0 0 1% 3vw;
     flex: 0 0;
 }
-.Text {
+.Text{
   padding-top: 30vh;
 }
 .Info {
@@ -1479,6 +1564,20 @@ ul li:hover ul.box{
 }
 .drop::after {
   background: rgb(255 255 255);
+}
+
+/* LEGAL */
+.Text_legal{
+  padding-top: 20px;
+}
+
+.card_legal{
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 20px 5px 20px;
+  margin-left: -23px;
+  margin-right: 0;
+  margin-bottom: -40px;
 }
 
 /* PRICING TABLE */
@@ -1561,6 +1660,9 @@ ul li:hover ul.box{
   }
 
   .Text p{
+    font-size: .8rem;
+  }
+  .Text_legal p{
     font-size: .8rem;
   }
 }
