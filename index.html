@@ -400,18 +400,7 @@
 
         <!-- scripts -->
 
-        <!-- <script src="./assets/js/main.js"></script>
-        <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
-
-        <!-- MOBILE HEIGHT OPTION 1-->
-        <!-- <script>
-            const documentHeight = () => {
-            const doc = document.documentElement
-            doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
-            }
-            window.addEventListener('resize', documentHeight)
-            documentHeight()
-        </script> -->
+        
 
          <!-- MOBILE HEIGHT OPTION 2-->
          <script>
@@ -504,6 +493,36 @@
 
         <!-- ZOHO -->
         <script src="./assets/js/main.js"></script>
+
+        <!-- PIWIK Integration Start -->
+        // Function to check if the consent banner is visible
+        function isConsentBannerVisible() {
+            // Replace this selector with the appropriate one for your consent banner
+            var consentBanner = document.getElementById('cookieyes'); 
+            // Check if the consent banner exists and is visible
+            return consentBanner && consentBanner.style.display !== 'none';
+        }
+
+        // Function to set initial compliance settings when consent banner is visible
+        function setInitialComplianceSettingsIfVisible() {
+            if (isConsentBannerVisible()) {
+                // Consent banner is visible, set initial compliance settings
+                ppms.cm.api(
+                    "setInitialComplianceSettings",
+                    {
+                        consents: ["analytics"],
+                    },
+                    console.log,
+                    console.error
+                );
+            }
+        }
+
+        // Call function to set initial compliance settings if consent banner is visible
+        setInitialComplianceSettingsIfVisible();
+
+
+        <!-- PIWIK Integration End -->
         
     </body>
 </html>
