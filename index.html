@@ -494,7 +494,7 @@
         <!-- ZOHO -->
         <script src="./assets/js/main.js"></script>
 
-        <!-- PIWIK Integration Start -->
+        <!-- PIWIK Integration Start gpt
         <script>
         // Function to check if the consent banner is visible
         function isConsentBannerVisible() {
@@ -523,7 +523,146 @@
         setInitialComplianceSettingsIfVisible();
         </script>
 
-        <!-- PIWIK Integration End -->
+         PIWIK Integration End gpt-->
+
+        <!-- PIWIK Integration dumbdata.co Start-->
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function getCookieValue(cookieName) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i].trim();
+              if (cookie.substring(0, cookieName.length + 1) === (cookieName + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(cookieName.length + 1));
+                break;
+              }
+            }
+          }
+          return cookieValue;
+        }
+        function consentmanagementCode() { 
+        var cookieValue = getCookieValue('cookieyes-consent');
+        var cookieParts = cookieValue ? cookieValue.split(',') : [];
+        
+        var necessary = null;
+        var analytics = null;
+        var performance = null;
+        var advertisement = null;
+        var functional = null;
+        var consent = null;
+        
+        for (var i = 0; i < cookieParts.length; i++) {
+          var parts = cookieParts[i].split(':');
+          var key = parts[0].trim();
+          var value = parts[1].trim();
+        
+          switch (key) {
+            case 'necessary':
+              necessary = value;
+              break;
+            case 'analytics':
+              analytics = value;
+              break;
+            case 'performance':
+              performance = value;
+              break;
+            case 'advertisement':
+              advertisement = value;
+              break;
+            case 'functional':
+              functional = value;
+              break;
+            case 'consent':
+              consent = value;
+              break;
+            default:
+              break;
+          }
+        }
+        // logs the cookieyes consent settings in the browser log
+        console.log('necessary:', necessary);
+        console.log('analytics:', analytics);
+        console.log('performance:', performance);
+        console.log('advertisement:', advertisement);
+        console.log('functional:', functional);
+        console.log('consent:', consent);
+        
+        //log to the browser console when consent settings gets updated
+            console.log("Cookie consent has been updated!");
+        
+        //datalayer event that pushes the cookie value
+        dataLayer.push({
+              'event': 'cookieyes_consent_update',
+              'cky-analytics': analytics,
+              'cky-advertisement': advertisement,
+             'cky-performance': performance,
+            'cky-functional': functional,
+            'cky-necessary': necessary,
+            'cky-consent': consent
+            });
+              
+        //Piwik pro consent settings update and retrieving
+        if (typeof ppms !== 'undefined' && ppms.cm && ppms.cm.api) {
+        var settings = {
+            consents: {
+                analytics: {
+                    status: (analytics == "yes") ? 1 : 0
+                },
+                 ab_testing_and_personalization: {
+                    status: (performance == "yes") ? 1 : 0
+                },
+                user_feedback: {
+                    status: (functional == "yes") ? 1 : 0
+                },
+                marketing_automation: {
+                    status: (functional == "yes") ? 1 : 0
+                },
+                remarketing: {
+                    status: (advertisement == "yes") ? 1 : 0
+                },
+                conversion_tracking: {
+                    status: (advertisement == "yes") ? 1 : 0
+                }
+            }
+        };
+        
+        ppms.cm.api('setComplianceSettings', settings, 
+          function() {
+            // success callback function
+            dataLayer.push({'event': 'Piwik_complianceSettingsSet'});
+          }, 
+          function(error) {
+            // error callback function
+            dataLayer.push({'event': 'Piwik_complianceSettingsError', 'errorMessage': error.message});
+          }
+        );
+        
+        ppms.cm.api('getComplianceSettings',
+          function(settings) {
+            dataLayer.push({'event': 'Piwik_complianceSettingsUpdate', 'settings': settings});
+          },
+          function(error) {
+            dataLayer.push({'event': 'Piwik_complianceSettingsError', 'errorMessage': error.message});
+          }
+        );
+        }
+        //the piwik pro codes ends here
+          
+         }
+        
+        // Call the function immediately
+        consentmanagementCode();
+        
+        // Add an event listener for cookieyes clicks with class "cky-btn" event 
+        document.addEventListener('click', function(event) {
+          if (event.target.classList.contains('cky-btn')) {
+        consentmanagementCode();
+          }
+          });
+</script>
+        <!-- PIWIK Integration dumbdata.co End -->
         
     </body>
 </html>
