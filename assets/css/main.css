@@ -17,15 +17,9 @@
 
 
 
-/* :root {
-  --doc-height: 100%;
-  } */
-  
-
-
- /* html {
-  height: -webkit-fill-available;
-} */
+body {
+  background-color: rgba(49,41,100,1);
+}
 
 section {
     font-family: 'Poppins', sans-serif;
