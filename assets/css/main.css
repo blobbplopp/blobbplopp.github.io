@@ -1650,6 +1650,15 @@ ul li:hover ul.box{
 
 }
 
+@media (max-width: 375px) {
+  .footer li {
+    width: 10em;
+  }
+  .footer-bottom {
+    padding-top: 4em;
+  }
+}
+
 @media (max-height: 740px) {
   .pricing{
     scale: 0.75;
