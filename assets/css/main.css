@@ -253,7 +253,7 @@ header ul li a {
 
 .Text_legal p{
   font-family: 'Poppins', sans-serif;  
-    font-size: 1.4em;
+    font-size: 1em;
     font-weight: 300;
     color: rgba(49,41,100,1);
 }
@@ -522,7 +522,7 @@ mark.SemiBold{
               #cd82f0 3%, 
               #569aac 40%, 
               #312964 105%);  
-  background-position: left top, left top, 50% 100.1%;
+  background-position: left top, left top, 50% 100.05%;
   background-repeat: no-repeat;
   background-size: 100%, 100%, 100.5%;
 }
