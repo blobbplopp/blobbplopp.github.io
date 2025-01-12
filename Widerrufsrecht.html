@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TRLMDZ9X');</script>
+        <!-- End Google Tag Manager -->
+        
+        <!-- PIWIK -->
+        <script type="text/javascript">
+            (function(window, document, dataLayerName, id) {
+            window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+            function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString();f="; SameSite=Strict"}document.cookie=a+"="+b+d+f+"; path=/"}
+            var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+            var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+            tags.async=!0,tags.src="https://blobbplopp.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+            !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+            })(window, document, 'dataLayer', '79b002b0-de81-4ba8-b574-c23f5941a43a');
+        </script>
+        <!-- PIWIK END -->
+
+        <!-- PIWIK Integration dumbdata.co Start-->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function getCookieValue(cookieName) {
+              var cookieValue = null;
+              if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                  var cookie = cookies[i].trim();
+                  if (cookie.substring(0, cookieName.length + 1) === (cookieName + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(cookieName.length + 1));
+                    break;
+                  }
+                }
+              }
+              return cookieValue;
+            }
+            function consentmanagementCode() { 
+            var cookieValue = getCookieValue('cookieyes-consent');
+            var cookieParts = cookieValue ? cookieValue.split(',') : [];
+            
+            var necessary = null;
+            var analytics = null;
+            var performance = null;
+            var advertisement = null;
+            var functional = null;
+            var consent = null;
+            
+            for (var i = 0; i < cookieParts.length; i++) {
+              var parts = cookieParts[i].split(':');
+              var key = parts[0].trim();
+              var value = parts[1].trim();
+            
+              switch (key) {
+                case 'necessary':
+                  necessary = value;
+                  break;
+                case 'analytics':
+                  analytics = value;
+                  break;
+                case 'performance':
+                  performance = value;
+                  break;
+                case 'advertisement':
+                  advertisement = value;
+                  break;
+                case 'functional':
+                  functional = value;
+                  break;
+                case 'consent':
+                  consent = value;
+                  break;
+                default:
+                  break;
+              }
+            }
+            // logs the cookieyes consent settings in the browser log
+            console.log('necessary:', necessary);
+            console.log('analytics:', analytics);
+            console.log('performance:', performance);
+            console.log('advertisement:', advertisement);
+            console.log('functional:', functional);
+            console.log('consent:', consent);
+            
+            //log to the browser console when consent settings gets updated
+                console.log("Cookie consent has been updated!");
+            
+            //datalayer event that pushes the cookie value
+            dataLayer.push({
+                  'event': 'cookieyes_consent_update',
+                  'cky-analytics': analytics,
+                  'cky-advertisement': advertisement,
+                 'cky-performance': performance,
+                'cky-functional': functional,
+                'cky-necessary': necessary,
+                'cky-consent': consent
+                });
+                  
+            //Piwik pro consent settings update and retrieving
+            if (typeof ppms !== 'undefined' && ppms.cm && ppms.cm.api) {
+            var settings = {
+                consents: {
+                    analytics: {
+                        status: (analytics == "yes") ? 1 : 0
+                    },
+                     ab_testing_and_personalization: {
+                        status: (performance == "yes") ? 1 : 0
+                    },
+                    user_feedback: {
+                        status: (functional == "yes") ? 1 : 0
+                    },
+                    marketing_automation: {
+                        status: (functional == "yes") ? 1 : 0
+                    },
+                    remarketing: {
+                        status: (advertisement == "yes") ? 1 : 0
+                    },
+                    conversion_tracking: {
+                        status: (advertisement == "yes") ? 1 : 0
+                    }
+                }
+            };
+            
+            ppms.cm.api('setComplianceSettings', settings, 
+              function() {
+                // success callback function
+                dataLayer.push({'event': 'Piwik_complianceSettingsSet'});
+              }, 
+              function(error) {
+                // error callback function
+                dataLayer.push({'event': 'Piwik_complianceSettingsError', 'errorMessage': error.message});
+              }
+            );
+            
+            ppms.cm.api('getComplianceSettings',
+              function(settings) {
+                dataLayer.push({'event': 'Piwik_complianceSettingsUpdate', 'settings': settings});
+              },
+              function(error) {
+                dataLayer.push({'event': 'Piwik_complianceSettingsError', 'errorMessage': error.message});
+              }
+            );
+            }
+            //the piwik pro codes ends here
+              
+             }
+            
+            // Call the function immediately
+            consentmanagementCode();
+            
+            // Add an event listener for cookieyes clicks with class "cky-btn" event 
+            document.addEventListener('click', function(event) {
+              if (event.target.classList.contains('cky-btn')) {
+            consentmanagementCode();
+              }
+              });
+        </script>
+        <!-- PIWIK Integration dumbdata.co End -->
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#312964" />
+        <title>Widerrufsrecht</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+        <!-- FONTS -->
+        <link rel="stylesheet" href="./assets/css/fonts.css">
+        <!-- <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.11.0/build/cssnormalize/cssnormalize-min.css">  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/cssnormalize-min.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
+       
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/css/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/css/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/css/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/css/favicon/site.webmanifest">
+        
+    </head>
+    <body>
+        <!-- NAVIGATION -->
+        <header>
+            
+            <img src="assets/css/img/logo-menu-shadow.svg" class="logo" alt="blobbplopp logo"></img>
+            <ul>
+                <li><a href="../">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="nav_name">home</span>
+                </a></li>
+                <li><a href="about.html">
+                    <span class="nav_name">über blobbplopp</span>
+                </a></li>
+                <li><a href="#info">
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                    <span class="nav_name">kontakt</span>
+                </a></li>
+                <!-- B2B BETREFF BEARBEITEN -->
+                <li><a href="mailto:partners@blobbplopp.de?subject=Wir sind an einer Zusammenarbeit mit euch interessiert">
+                    <span class="nav_name">B2B</span>
+                </a></li>
+                <li><a href="#info">
+                    <ion-icon name="information-outline"></ion-icon>
+                    <span class="nav_name">info</span>
+                </a></li>
+
+            </ul>
+        </header>
+
+        <!-- DROP -->
+        <!-- <div class="rain drop" data-tooltip="Die tatsächliche Form eines Regentropfens.
+                                            Eine relativ große Aufprallfläche erzeugt beim Auftreffen auf die Fensterbank ein lautes Geräusch.">
+        </div> -->
+            
+        <!-- DROP END -->
+        
+        <div class="container_about" >
+            <section_about class="one_about" id="home">
+                <div class="Info">
+                    <div class="card_legal">
+                        <div class="Text_legal">
+                            <h1>Widerrufsrecht für Verbraucher</h1>
+                            <p>(Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, 
+                                die überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit 
+                                zugerechnet werden können.)</p>
+                            <p>Stand 10. Januar 2025</p>
+<h2>Widerrufsrecht</h2>
+
+<p>Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag,</p>
+<p>– an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat, sofern Sie eine 
+    oder mehrere Waren im Rahmen einer einheitlichen Bestellung bestellt haben und diese einheitlich geliefert wird bzw. werden;</p>
+<p>– an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat, sofern 
+    Sie mehrere Waren im Rahmen einer einheitlichen Bestellung bestellt haben und diese getrennt geliefert werden;</p>
+<p>– an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Teilsendung oder das letzte Stück in Besitz 
+    genommen haben bzw. hat, sofern Sie eine Ware bestellt haben, die in mehreren Teilsendungen oder Stücken geliefert wird;</p>
+
+
+
+<p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (NEJMAN & NEJMAN UNDER 30 dB GbR, Aachener Str. 127, 40223 Düsseldorf, Deutschland, 
+    E-Mail: hello@blobbplopp.de) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, 
+    diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+<p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+
+
+<h3>Folgen des Widerrufs</h3> 
+
+<p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der 
+    zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), 
+    unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. 
+    Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde 
+    ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
+
+<p>Wir können die Rückzahlung für paketversandfähige Waren verweigern, bis wir diese Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, 
+    dass Sie diese Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.</p>
+<p>Sie haben die paketversandfähigen Waren unverzüglich und in jedem Fall spätestens binnen 14 Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, 
+    an uns zurückzusenden. Die Frist ist gewahrt, wenn Sie die paketversandfähigen Waren vor Ablauf der Frist von 14 Tagen absenden.</p>
+<p>Sie tragen die unmittelbaren Kosten der Rücksendung für paketversandfähige Waren. Bei Waren, die aufgrund ihrer Beschaffenheit nicht normal 
+    mit der Post zurückgesandt werden können, betragen diese 100 EUR.</p>
+<p>Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der Beschaffenheit, 
+    Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.</p>
+
+
+<h2>Ausschluss- bzw. Erlöschensgründe</h2>
+<h3>Ausschluss des Widerrufsrechts</h3>
+<p>Das Widerrufsrecht besteht nicht bei Verträgen zur Lieferung von Waren, die nicht vorgefertigt sind und für deren Herstellung eine individuelle 
+    Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind.</p> 
+
+<h3>Das Widerrufsrecht erlischt vorzeitig bei Verträgen</h3>
+
+<p>
+    <br /><b>-</b>&nbsp; zur Lieferung versiegelter Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur Rückgabe geeignet sind, wenn ihre Versiegelung nach 
+    der Lieferung entfernt wurde;
+    <br /><b>-</b>&nbsp; zur Lieferung von Waren, wenn diese nach der Lieferung aufgrund ihrer Beschaffenheit untrennbar mit anderen Gütern vermischt wurden;</p>
+
+
+
+<h2>Muster-Widerrufsformular</h2>
+
+<p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)
+    <br />
+    <br /><b>-</b>&nbsp; An NEJMAN & NEJMAN UNDER 30 dB GbR, Aachener Str. 127, 40223 Düsseldorf, Deutschland, E-Mail: hello@blobbplopp.de
+    <br />
+    <br /><b>-</b>&nbsp; Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)
+    <br /><b>-</b>&nbsp; Bestellt am (*)/erhalten am (*)
+    <br />
+    <br /><b>-</b>&nbsp; Name des/der Verbraucher(s)
+    <br /><b>-</b>&nbsp; Anschrift des/der Verbraucher(s)
+    <br /><b>-</b>&nbsp; Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)
+    <br /><b>-</b>&nbsp; Datum(*) 
+    
+    <br />
+    <br /> Unzutreffendes streichen.</p>
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section_about>
+
+            <!-- FOOTER -->
+
+            <section class="bottom-field" id="info">
+                <footer class="footer">
+                    <div class="footer-left">
+                        <a href="index.html"><img src="assets/css/img/logo.png" alt="LOGO" ></a>
+                        <div class="socials">
+                            <a href="https://www.facebook.com/blobbplopp"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.youtube.com/@blobbplopp"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/blobbplopp/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/blobbplopp/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div> 
+                    
+                    <ul class="footer-right">
+                        
+                        <li>
+                            <h4>Service & Beratung</h4>
+                            <ul class="box">
+                                <li><a href="mailto:Mia.hilft@blobbplopp.de?subject=Wie kann ich Dir helfen?">Email an Mia</a></li>
+                                <li><a href="mailto:Theo.hilft@blobbplopp.de?subject=Wie kann ich Dir helfen?">Email an Theo</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <!-- <li><a href="#">step-by-step <br> Anleitung</a></li> -->
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h4 href="#">Jobs & Karriere</h4>
+                            <ul class="box">
+                                <li><a href="mailto:career@blobbplopp.de?subject=Karriere">Vollzeit</a></li>
+                                <li><a href="mailto:career@blobbplopp.de?subject=Praktikum">Praktikum</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <h4>Info</h4>
+                            <ul class="box">
+                                <li><a href="about.html">Über blobbplopp</a></li>
+                                <li><a href="Impressum.html">Impressum</a></li>
+                                <!-- <li><a href="">AGB</a></li> -->
+                                <li><a href="Datenschutz.html">Datenschutz</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h4>B2B</h4>
+                            <ul class="box">
+                                <li><a href="mailto:partners@blobbplopp.de?subject=Wir sind an einer Zusammenarbeit mit euch interessiert">Kontakt</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <h4>Kontakt</h4>
+                            <ul class="box">
+                                <!-- <a>blobbplopp UG</a>
+                                <a>Aachener Str. 127</a>
+                                <a>DE - 40223 Düsseldorf</a> -->
+                                <li><a href="mailto:hello@blobbplopp.de">hello@blobbplopp.de</a></li>
+                            </ul>
+                        </li>
+                    </ul>  
+                    
+                    <div class="footer-bottom">
+                        <p>All rights reserved by &copy;blobbplopp 2025</p>
+                    </div>
+                                    
+                </footer>
+            </section>    
+        </div>
+
+
+        <!-- scripts -->
+
+        <!-- <script src="./assets/js/main.js"></script>
+        <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
+        <!-- NAVIGATION -->
+        <script type="text/javascript">
+        const header = document.querySelector("header");
+        const container_about = document.querySelector(".container_about");
+
+        // Function to handle scroll event
+        function handleScroll(event) {
+          if (container_about.scrollTop > 0) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+
+        // Check window width on load and add/remove event listener accordingly
+        function checkWindowWidth() {
+          if (window.innerWidth < 431) {
+            container_about.removeEventListener("scroll", handleScroll); // Remove event listener
+          } else {
+            container_about.addEventListener("scroll", handleScroll); // Add event listener
+          }
+        }
+
+        // Call checkWindowWidth on page load and resize
+        window.addEventListener("load", checkWindowWidth);
+        window.addEventListener("resize", checkWindowWidth);
+
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+        
+    </body>
+</html>
