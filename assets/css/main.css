@@ -1414,7 +1414,7 @@ ul li:hover ul.box{
   } */
 
   .one {
-    background-position: left top, left top, 2% 96%;
+    background-position: left top, left top, 2% 95%;
     background-image: url('/assets/css/svg/menu.svg'), url('/assets/css/svg/sub.svg'),url('/assets/css/svg/bottom.svg'), linear-gradient(357deg, 
     #312964 8%, 
     /* online version change 7% to 8% */
