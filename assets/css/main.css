@@ -36,6 +36,12 @@ section {
     max-width: 1440px;   
 }
 
+/* Ecwid- "section" Element reset */
+#my-store-108947004 section[class=""] {
+  all: unset;
+  display: block;   /* Standard-Verhalten */
+}
+
 .container{
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
