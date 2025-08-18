@@ -331,6 +331,12 @@ mark.midnight {
   font-weight: 600;
 }
 
+mark.twilight {
+  color: #405680;
+  background: none;
+  font-weight: 600;
+}
+
 mark.SemiBold{
   color: inherit;
   font-weight: 600;
